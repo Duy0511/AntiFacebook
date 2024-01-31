@@ -39,6 +39,7 @@
 }
 
 .searchInput {
+    text-transform: capitalize;
     border: none;
     width: 70%;
 }

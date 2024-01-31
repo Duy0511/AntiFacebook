@@ -1,0 +1,68 @@
+/* Comment.css */
+
+.comment {
+    padding:10px 0px 10px 16px;;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .commentWrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .avartarComment {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    margin-bottom: 30px;
+  }
+  .ImgReactionComment{
+    width: 18px;
+    height: 18px;
+    transform: translateX(100%) translateY(20%);
+  }
+  .commentRight {
+    flex: 1;
+  }
+  .commentWrap{
+    border-radius: 24px;
+    background-color: #CCD0D5;
+    display: inline-block;
+    padding: 12px;
+  }
+  .nameUser {
+    font-weight: bold;
+    display:block;
+  }
+  
+  .contentComment {
+    display: inline-block;
+  } 
+  
+  .commentBottom {
+    display: flex;
+    font-size: 12px;
+    color: #555;
+    margin-left: 10px;
+  }
+  
+  /* Optionally, you can style individual elements within commentBottom */
+  .commentBottom span {
+    margin-right: 10px;
+  }
+  
+  /* Add styles for the MoreVert icon if needed */
+  /* Example: */
+  .commentBottom .reactionComment {
+    /* display: flex; */
+    align-items: center;
+  }
+  
+  .commentBottom .reactionComment svg {
+    margin-right: 5px;
+  }
+  

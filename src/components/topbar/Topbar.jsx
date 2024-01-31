@@ -1,7 +1,38 @@
 import "./topbar.css"
 import { Search, Person, Chat, Notifications } from '@mui/icons-material';
-
+import axios from "axios";
+import React, { useCallback, useContext, useEffect, useState } from 'react';
+import { useDropzone } from 'react-dropzone';
+import {valueContext} from '../../pages/home/Home'
+const UploadImage = () => {
+    const [imageData, setImageData] = useState(null);
+   
+    const onDrop = useCallback(acceptedFiles => {
+       const file = acceptedFiles[0];
+       const reader = new FileReader();
+   
+       reader.onabort = () => console.log('file reading was aborted');
+       reader.onerror = () => console.log('file reading has failed');
+       reader.onload = () => {
+         const binaryStr = reader.result;
+         
+       };
+       reader.readAsArrayBuffer(file);
+    }, []);
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({
+        onDrop,
+        multiple: false,
+        accept: 'image/*',
+     });
+}
+const Avartar = () =>{
+    useEffect(() =>{
+        // const res = axios.
+    })
+}
 export default function Topbar() {
+    // phải lấy {user} chứ k là user 
+    const {name,avatar} = useContext(valueContext)
     return (
         <div className="topbarContainer">
             <div className="topbarLeft">
@@ -32,7 +63,7 @@ export default function Topbar() {
                         <span className="topbarIconBadge">1</span>
                     </div>
                 </div>
-                <img src="/assets/person/10.jpg" alt="" className="topbarImg"/>
+                <img src={avatar} alt="" className="topbarImg"/>
             </div>
             
         </div>

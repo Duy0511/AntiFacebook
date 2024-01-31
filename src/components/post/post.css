@@ -78,3 +78,45 @@
     border-bottom: 1px dashed gray;
     font-size: 15px;
 }
+.postBottomComment {
+    border-radius: 5px ;
+    border: solid 1px #ddd ;
+    padding: 10px;
+    display: flex;
+}
+.commentInput {
+    margin: 0px 10px; 
+    border-radius: 24px;
+    flex : 1;
+}
+.commentInput:focus,.commentInput:hover{
+    border:solid #007bff; /* Change the border color to blue when focused */
+  outline: none;
+  /* khi được focus thì bỏ đường viền cũ nếu không nó sẽ bị đè lên nhau*/
+}
+.commentAvatar{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+/* MyComponent.css */
+
+.sendButton{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: none;
+}
+.sendButton:hover{
+    background-color: grey;
+    cursor: pointer;
+}
+.sendIcon{
+    /* display : flex giúp nó chiếm đúng bằng nội dung bên trong */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+  

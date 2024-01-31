@@ -68,10 +68,13 @@
     text-align: center;
     color: #1775ee;
 }
-
+.wrraperButton{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
 .loginRegisterButton {
     width: 60%;
-    align-self: center;
     height: 50px;
     border-radius: 10px;
     border: none;
