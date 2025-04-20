@@ -5,27 +5,36 @@ import Rightbar from "../../components/rightbar/Rightbar";
 import "./home.css" 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link,useLocation} from "react-router-dom";
 import { getDataUser} from "../../data/getData"
 import { createContext } from "react";
+
 import io from 'socket.io-client';
 export const valueContext = createContext()
+
 // khi import từ tập tin có nhiều export thì cần dấu ngoặc còn tập tin export 1 biến thì không cần ngoặc
 export default function Home() {
+    
     const [socket, setSocket] = useState(null);
     const [name,setName] = useState('')
     const [avatar,setAvattar] = useState('')
+    const [id, setId] = useState('')
     const navigate = useNavigate()
     axios.defaults.withCredentials = true;
     const Check = async ()=>{
-        const res = await getDataUser()
-        console.log(res)
+        try{
+           const res = await getDataUser()
+           console.log(res)
         if(res.data.valid){
+            setId(res.data.user_id)
             setName(res.data.username)
             setAvattar(res.data.image) 
-        }else{
+        }
+        }catch(err){
+            console.log(err.response.data.message)
             navigate('/login')
         }
+        
     }
     // const sendData = () => {
     //     // Gửi tin nhắn lên server
@@ -33,7 +42,6 @@ export default function Home() {
     //     setMessage('');
     //   };
     useEffect(()=>{
-
         Check()
         // const newSocket = io('http://localhost:3001');
         //     setSocket(newSocket);
@@ -51,7 +59,8 @@ export default function Home() {
     return (
         <valueContext.Provider value={{
             name,
-            avatar
+            avatar,
+            id
         }}>
         <div>
             <Topbar />
@@ -60,6 +69,8 @@ export default function Home() {
                 <Feed/>
                 <Rightbar/>
             </div>
+            
+            
         </div>
         </valueContext.Provider>
     )

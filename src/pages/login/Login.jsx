@@ -29,17 +29,15 @@ export default function Login() {
             password: formik.values.password,
           });
           if (res.data.status === 'success') {
-            navigate('/');
+
             formik.setFieldValue('loginStatus',`${res.data.message}`)
-            // axios.defaults.withCredentials = true;
+            navigate('/');
           }else{
-            throw new Error(`${res.data.message}`)
+            throw new Error(`co loi xay ra khi gui cookie`)
           }
         } catch (err) {
-          console.log(err)
-          if(err.response.status === 404){
-            formik.setFieldValue('loginStatus','Không thể kết nối tới server')
-          }else{
+          if(err){
+            console.log(err)
             formik.setFieldValue('loginStatus',`${err.response.data.message}`)
           }
         }

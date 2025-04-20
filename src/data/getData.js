@@ -5,7 +5,7 @@ const getDataUser = () => {
   return axios.get(`http://localhost:3001/`)
 }
 const pustDataPost = (content,image) => {
-  return axios.post(`http://localhost:3001/`,{
+  return axios.post(`http://localhost:3001/push-data-post`,{
     content,
     image
   })
@@ -25,8 +25,17 @@ const getComment = () =>{
 const getReactions = () =>{
   return axios.get(`http://localhost:3001/get-data-reactions`)
 }
-const pushReactions = () =>{
-  return axios.get(`http://localhost:3001/push-data-reactions`)
+const pushReactions = (idPost,reactionName) =>{
+  return axios.post(`http://localhost:3001/push-data-reactions`,{
+    idPost,
+    reactionName
+  })
+}
+const updateReactions = (idPost,reactionName) =>{
+  return axios.put(`http://localhost:3001/update-data-reactions`,{
+    idPost,
+    reactionName
+  })
 }
 export{
   getDataUser,
@@ -35,6 +44,7 @@ export{
   pushComment,
   getComment,
   getReactions,
-  pushReactions
+  pushReactions,
+  updateReactions
 } 
 

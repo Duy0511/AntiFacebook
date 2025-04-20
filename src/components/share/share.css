@@ -24,14 +24,19 @@
     margin-right: 10px;
 }
 
+
 .shareInput {
+    margin-left: 10px;
     text-transform: capitalize;
     border: none;
     width: 80%;
 }
-
+.shareInput:hover{
+    cursor: pointer;
+}
 .shareInput:focus {
     outline: none;
+    cursor: pointer;
 }
 
 .shareHr{
@@ -42,11 +47,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 .shareOptions {
     display: flex;
     margin-left: 20px;
+    justify-content: space-between;
 }
 
 .shareOption {
@@ -77,9 +84,15 @@
     color: white;
 }
 .imageUpload{
-    width: 20px;
-    height: 30px;
-    background-size:100% ;
+    
+    background-size:contain ;
     background-repeat: no-repeat;
     display: inline-block;
+}
+.arrayImage{
+  width: 100%;
+}
+.arrayImage img{
+  padding: 8px;
+  max-width: 100%; /* Ảnh sẽ tự động thu nhỏ để không vượt quá chiều rộng của .addImagePost */
 }

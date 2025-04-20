@@ -12,7 +12,9 @@
 .topbarLeft {
     flex: 3;
 }
-
+.link-style{
+    text-decoration: none;
+}
 .logo {
     font-size: 24px;
     margin-left: 20px;

@@ -1,0 +1,198 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.visible{
+    display: flex;
+}
+.hidden{
+    display: none;
+}
+.padding16{
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.margin16{
+    margin-right: 16px;
+    margin-left: 16px;
+}
+.margin_bottom24{
+    margin-bottom: 24px;
+}
+.opacity{
+    opacity: 0.6;
+    font-size: 13px;
+    font-weight: 200;
+}
+.iconClose{
+    color: rgba(218,220,225,255);
+}
+.createPost{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    align-items: center; 
+    /* hai thuộc tính này chỉ dùng được khi kết hợp display flex */
+    justify-content: center;
+    display: flex;
+}
+.clear::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.containerPost{
+    color: #e4e6eb;
+    max-width: calc(100% - 64px);
+    background-color: rgba(36, 37, 38, 1);
+    position: relative;
+    width: 500px;
+    min-height: 200px;
+}
+.headerCreatePost{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(47,48,49,255);
+}
+.buttonClose {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    right: 0;
+    position: absolute;
+    cursor: pointer;
+    background-color: #3a3b3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+    /* căn chính giữa */
+    /* Nếu bạn muốn đặt vị trí của nút đóng, bạn có thể thêm right và top ở đây */
+}
+.buttonClose:hover{
+background: #818282;
+}
+/* phải để sát vào không nó sẽ css cho các thằng con nếu để cách ra buttonClose :hover là nhắm vào thằng con đấy */
+  
+
+.imagePost{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.bodyCreatePost{
+    display: flex;
+    /* flex-direction: column; */
+}
+.wrapRight{
+    flex-grow: 1;
+    /* cách để set width = phần còn lại của thẻ */
+}
+.wrapTop{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.wrapBottom{
+    display: flex;
+    /* thẻ inline block nó chỉ chiếm hết thành phần */
+}
+.itemBottom{
+    margin-top: 10px;
+    display: flex;
+    background-color: #3a3b3c;
+    line-height: 24px;
+}
+.addImagePost {
+  width: 100%;
+  border: 1px solid #3a3b3c;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.max_height{
+    max-height: auto;
+}
+.addImagePostHovered{
+    cursor: pointer;
+    background-color: #818282;
+}
+.wrapRow{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0px;
+}
+/* cach deu hai phia thi la space-between */
+.inputPost{
+    flex-grow: 1;
+    color: rgba(166,169,173,255);
+    background-color: transparent;
+    /* theo màu cha */
+    border: none;
+}
+.inputPost:focus{
+    outline: none;
+    color: rgba(228,230,235,255);
+}
+.buttonCloseImage{
+    top: 0;
+}
+.itemBottomCreatePost{
+    border: 1px solid rgba(255,255,255,0.3);
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+    align-items: center;
+    border-radius: 10px;
+}
+.addPhotoIcon{
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(71,73,74,255);
+}
+.addImagePostIcon{
+    color: #45bd62;
+    cursor: pointer;
+
+}
+.tagFriendIcon{
+    color:#1877f2;
+    cursor: pointer;
+}
+.feelIcon{
+    color: #eab028;
+    cursor: pointer;
+}
+.addLocationIcon{
+    color: #f5533d;
+    cursor: pointer;
+}
+.gifIcon{
+    color: #818282;
+    cursor: pointer;
+}
+.buttonSend{
+    padding: 12px;
+    width: 100%;
+}
+.optionIon{
+    
+}

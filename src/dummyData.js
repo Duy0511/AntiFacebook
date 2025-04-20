@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { getDataPost , getComment,pushComment,getReactions,pushReactions} from "./data/getData"
+import { getDataPost , getComment,pushComment,getReactions,pushReactions,updateReactions} from "./data/getData"
 import moment from "moment";
 export const Users = [
     {
@@ -69,7 +69,7 @@ export const handleDataPost = async ()=>{
     //filter là lọc mảng
     // reduce là dùng để tính tổng mảng hoặc gộp các phần tử 
 }
-export const newDataPosts = async() =>{
+export const newDataPosts = async() =>{ // ham này thì nó sẽ lấy mỗi bài viết mới nhất thôi 
     console.log(1)
     const res = await getDataPost()
     const posts = res.data.data
@@ -93,6 +93,7 @@ export const handleCommentPost = async() =>{
     return comments
 }
 export const handlePushComment = async(dataComment,postID) =>{
+    console.log(dataComment,postID)
     const res = await pushComment(dataComment,postID)
     console.log(res.data.data)
     return res.data.data
@@ -103,14 +104,18 @@ export const handleCommentNew = async() =>{
     const length = comments.length-1
     return comments[length]
 }
-export const handleReactions = async() =>{
+export const handleGetReactions = async() =>{
     const res = await getReactions()
     console.log(res.data.data)
     return res.data.data
 }
-export const handlePushReactions = async ()=>{
-    const res = await pushReactions()
-    console.log(res.data.data)
+export const handlePushReactions = async (id,nameReact)=>{
+
+    const res = await pushReactions(id,nameReact)
+    console.log(res)
+}
+export const handleUpdateReactions = async(id,nameReact) =>{
+    const res = await updateReactions(id,nameReact)
 }
 function date(start1, end1) {
     const start = new Date(start1);

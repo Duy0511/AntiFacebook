@@ -4,6 +4,7 @@ import axios from "axios";
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import {valueContext} from '../../pages/home/Home'
+import { Link } from "react-router-dom";
 const UploadImage = () => {
     const [imageData, setImageData] = useState(null);
    
@@ -36,7 +37,9 @@ export default function Topbar() {
     return (
         <div className="topbarContainer">
             <div className="topbarLeft">
+            <Link to={`/`} className="link-style">
                 <span className="logo">HminhSocial</span>
+            </Link>
             </div>
             <div className="topbarCenter">
                 <div className="searchbar">
@@ -63,7 +66,10 @@ export default function Topbar() {
                         <span className="topbarIconBadge">1</span>
                     </div>
                 </div>
-                <img src={avatar} alt="" className="topbarImg"/>
+                <Link to={`/?name=${name}`}>
+                    <img src={avatar} alt="" className="topbarImg"/>
+                </Link>
+                
             </div>
             
         </div>
